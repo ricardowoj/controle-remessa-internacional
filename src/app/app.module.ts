@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AloMundoComponent } from './alo-mundo/alo-mundo.component';
-import { AngularTopComponent } from './angular-top/angular-top.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AloMundoComponent,
-    AngularTopComponent
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

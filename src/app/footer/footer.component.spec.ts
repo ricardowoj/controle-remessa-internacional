@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AloMundoComponent } from './alo-mundo.component';
+import { FooterComponent } from './footer.component';
 
-describe('AloMundoComponent', () => {
-  let component: AloMundoComponent;
-  let fixture: ComponentFixture<AloMundoComponent>;
+describe('FooterComponent', () => {
+  let component: FooterComponent;
+  let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AloMundoComponent]
+      declarations: [FooterComponent]
     });
-    fixture = TestBed.createComponent(AloMundoComponent);
+    fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
