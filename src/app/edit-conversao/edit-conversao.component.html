@@ -17,14 +17,15 @@
             <div class="card blue-grey lighten-5">
               <div class="card-content black-text">
                 <p>Dólar Americano</p>
-                <input type="number" class="validate" readonly [(ngModel)]="this.conversao.valorConvertido">
               </div>
             </div>
           </div>
+          <div class="col s12 m6">
+            <button class="btn waves-effect waves-light valign-wrapper" (click)="this.onSalvar()">Salvar
+              <i class="material-icons right">save</i>
+            </button>
+          </div>
         </div>
-        <button class="btn waves-effect waves-light valign-wrapper" (click)="this.onSalvar()">Salvar
-          <i class="material-icons right">save</i>
-        </button>
       </div>
     </div>
   </div>
