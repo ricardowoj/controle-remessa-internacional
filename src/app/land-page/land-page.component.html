@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-5">
+      <div class="card-content white-text">
+        <span class="card-title">Controle de Remessas Internacionais</span>
+        <div class="row">
+          <div class="col s12 m6">
+            <app-input-conversao #input (valueEvent)="this.onValueEvent($event)"></app-input-conversao>
+          </div>
+          <div class="col s12 m6">
+            <div class="card blue-grey lighten-5">
+              <div class="card-content black-text">
+                <p>Dólar Americano</p>
+                <input type="number" class="validate" readonly [(ngModel)]="this.conversao.valorConvertido">
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <button class="btn waves-effect waves-light valign-wrapper" (click)="this.onConvert()">Converter
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+        <mat-table [dataSource]="transacoes['listaConversao']" multiTemplateDataRows *ngIf="transacoes['listaConversao'].length > 0">
+          <ng-container matColumnDef = "data">
+            <th mat-header-cell *matHeaderCellDef> Data</th>
+            <td mat-cell *matCellDef = "let element"> {{element.data | date:'dd/MM/yyyy'}} </td>
+          </ng-container>
+          <ng-container matColumnDef = "de">
+            <th mat-header-cell *matHeaderCellDef> De</th>
+            <td mat-cell *matCellDef = "let element"> {{element.de}} </td>
+          </ng-container>
+          <ng-container matColumnDef = "valorOriginal">
+            <th mat-header-cell *matHeaderCellDef> Valor Original</th>
+            <td mat-cell *matCellDef = "let element"> {{element.valorOriginal}} </td>
+          </ng-container>
+          <ng-container matColumnDef = "para">
+            <th mat-header-cell *matHeaderCellDef> Para</th>
+            <td mat-cell *matCellDef = "let element"> {{element.para}} </td>
+          </ng-container>
+          <ng-container matColumnDef = "valorConvertido">
+            <th mat-header-cell *matHeaderCellDef> Valor convertido</th>
+            <td mat-cell *matCellDef = "let element"> {{element.valorConvertido}} </td>
+          </ng-container>
+          <ng-container matColumnDef = "cotacao">
+            <th mat-header-cell *matHeaderCellDef> Cotação</th>
+            <td mat-cell *matCellDef = "let element"> {{element.cotacao}} </td>
+          </ng-container>
+          <ng-container matColumnDef = "actions">
+            <th mat-header-cell *matHeaderCellDef> Ação</th>
+            <td mat-cell *matCellDef =" let element">
+              <mat-icon class="icon bulb" color="warn" style="cursor: pointer;" [routerLink]="['/editar', element.id]"
+                [state]="transacoes['listaConversao']">edit</mat-icon>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef = "displayedColumns"></tr>
+          <tr mat-row *matRowDef = "let row; columns: displayedColumns;"></tr>
+        </mat-table>
+      </div>
+    </div>
+  </div>
+</div>
