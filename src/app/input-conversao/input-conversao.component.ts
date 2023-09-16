@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Conversao } from '../model/conversao';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-conversao',
@@ -7,13 +7,25 @@ import { Conversao } from '../model/conversao';
   styleUrls: ['./input-conversao.component.css']
 })
 export class InputConversaoComponent implements OnInit {
-  value: number = 0;
+  valueFrom: FormGroup;
   @Output() valueEvent:EventEmitter<number>;
-  constructor(){
+  constructor(private fb: FormBuilder) {
     this.valueEvent = new EventEmitter<number>();
+    this.valueFrom = this.fb.group({
+      value: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(10)
+        ]
+      ],
+    });
   }
   ngOnInit(): void {}
   onChangesValue(): void {
-    this.valueEvent.emit(this.value)
+    if(this.valueFrom['value'].value > 0){
+      this.valueEvent.emit(this.valueFrom['value'].value)
+    }
   }
 }

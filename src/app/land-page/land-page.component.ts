@@ -32,6 +32,7 @@ export class LandPageComponent implements OnInit {
     this.transacoes['listaConversao'].push(novaConversao);
     this.transacoes['listaConversao'] = [...this.transacoes['listaConversao']];
     this.resetConversao();
+    this.addConversaoLocalStorage(novaConversao);
   }
   onResetValue() {
     if(this.conversao.valorOriginal < 0) {
@@ -60,6 +61,13 @@ export class LandPageComponent implements OnInit {
   }
   onValueEvent(event: number) {
     this.conversao.valorOriginal = event;
+  }
+  desabilitaBotao() {
+    return !(this.conversao.valorOriginal > 0);
+  }
+
+  private addConversaoLocalStorage(novaConversao: Conversao) {
+    localStorage.setItem("conversao", JSON.stringify(novaConversao));
   }
 }
 

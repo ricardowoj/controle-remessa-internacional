@@ -1,1 +1,22 @@
-<input type="number" class="validate" [(ngModel)]="this.value" (change)="onChangesValue()"/>
+
+
+
+<form [formGroup]="valueFrom" novalidate>
+  <div class="input-field form-group">
+    <i class="material-icons prefix">account_balance</i>
+    <input
+      id="icon_prefix"
+      class="form-control validate"
+      type="text"
+      formControlName="value"
+      (change)="onChangesValue()"
+      required
+    >
+    <label for="icon_prefix">Valor *</label>
+  </div>
+  <div class="invalid-feedback" *ngIf="valueFrom.controls['value'].invalid && (valueFrom.controls['value'].dirty || valueFrom.controls['value'].touched)">
+    <div *ngIf="valueFrom.controls['value'].errors?.['required']">
+      Valor é obrigatório.
+    </div>
+  </div>
+</form>
