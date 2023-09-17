@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Observable, throwError} from "rxjs";
 import { catchError } from 'rxjs/operators';
 import {Conversao} from "../model/conversao";
@@ -11,10 +11,16 @@ export class LandPageService {
   private url = 'http://localhost:3000/conversoes';
 
   constructor(private httpClient: HttpClient) { }
+  private headersReq: HttpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json; charset=utf-8',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET',
+    'Access-Control-Allow-Origin': '*'
+  });
 
   getConversoes(): Observable<HttpResponse<Conversao[]>> {
     return this.httpClient
-      .get<Conversao[]>(this.url, { observe: 'response' })
+      .get<Conversao[]>(this.url, { observe: 'response', headers: this.headersReq })
       .pipe(
         catchError(error => {
           let errorMsg: string;
