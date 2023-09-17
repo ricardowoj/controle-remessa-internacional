@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href=/controle-remessa-internacional/",
+    "build": "ng build --configuration production --base-href=/controle-remessa-internacional/",
     "ghpages": "angular-cli-ghpages --dir=dist/controle-remessa-internacional",
     "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
