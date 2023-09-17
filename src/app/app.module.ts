@@ -12,6 +12,7 @@ import { MatTableModule } from '@angular/material/table'
 import { MatIconModule } from '@angular/material/icon';
 import { EditConversaoComponent } from './edit-conversao/edit-conversao.component';
 import { InputConversaoComponent } from './input-conversao/input-conversao.component';
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { InputConversaoComponent } from './input-conversao/input-conversao.compo
     MatIconModule,
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
