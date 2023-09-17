@@ -40,7 +40,7 @@
       </ng-container>
       <ng-container matColumnDef="valorOriginal">
         <th mat-header-cell *matHeaderCellDef> Valor Original</th>
-        <td mat-cell *matCellDef="let element"> {{element.valorOriginal}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.valorOriginal | currency:'BRL':'symbol' }} </td>
       </ng-container>
       <ng-container matColumnDef="para">
         <th mat-header-cell *matHeaderCellDef> Para</th>
@@ -48,11 +48,11 @@
       </ng-container>
       <ng-container matColumnDef="valorConvertido">
         <th mat-header-cell *matHeaderCellDef> Valor convertido</th>
-        <td mat-cell *matCellDef="let element"> {{element.valorConvertido}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.valorConvertido | currency:'BRL':'symbol' }} </td>
       </ng-container>
       <ng-container matColumnDef="cotacao">
         <th mat-header-cell *matHeaderCellDef> Cotação</th>
-        <td mat-cell *matCellDef="let element"> {{element.cotacao}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.cotacao | currency:'BRL':'symbol' }} </td>
       </ng-container>
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Ação</th>
