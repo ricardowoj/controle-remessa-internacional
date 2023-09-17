@@ -1,0 +1,4 @@
+{
+  "conversoes": "/conversoes",
+  "conversoes/:id": "/conversoes/:id"
+}

@@ -1,0 +1,40 @@
+{
+  "conversoes": [
+    {
+      "id": 1,
+      "data": "2021-08-08T12:59:35 -01:00",
+      "valorOriginal": "3504.10",
+      "cotacao": "5.50",
+      "valorConvertido": "19272.55",
+      "de":  "real",
+      "para": "dolar"
+    },
+    {
+      "id": 2,
+      "data": "2021-08-08T12:59:35 -01:00",
+      "valorOriginal": "3504.10",
+      "cotacao": "5.50",
+      "valorConvertido": "19272.55",
+      "de":  "real",
+      "para": "dolar"
+    },
+    {
+      "id": 3,
+      "data": "2021-08-08T12:59:35 -01:00",
+      "valorOriginal": "3504.10",
+      "cotacao": "5.50",
+      "valorConvertido": "19272.55",
+      "de":  "real",
+      "para": "dolar"
+    },
+    {
+      "id": 4,
+      "data": "2021-08-08T12:59:35 -01:00",
+      "valorOriginal": "3504.10",
+      "cotacao": "5.50",
+      "valorConvertido": "19272.55",
+      "de":  "real",
+      "para": "dolar"
+    }
+  ]
+}
